@@ -17,11 +17,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
+    <html>
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <body className={inter.className}>{children}</body>
-    </>
+    </html>
   );
 }

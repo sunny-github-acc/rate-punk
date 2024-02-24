@@ -1,0 +1,33 @@
+.layout
+  min-height: 100%
+  margin-top: 56px
+
+.headerContainer
+  position: absolute
+  top: 0
+  width: calc(100% - 34px)
+  padding: 0px 16px
+  background: $background
+  border: 1px solid $black
+
+.header
+  height: 56px
+
+.headerItem
+  width: auto
+  padding: 8px
+  cursor: pointer
+
+.menuOptions
+  max-height: 500px
+  padding-bottom: 8px
+  opacity: 1
+  overflow: hidden
+  transition: max-height 1s
+  &.hidden
+    max-height: 0
+    padding-bottom: 0
+    transition: max-height 0.3s, padding 0.5s
+
+  .menuOption
+    height: 40px
