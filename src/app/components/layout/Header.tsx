@@ -18,53 +18,53 @@ export default function Header() {
   ];
 
   return (
-    <Flex
-      className={`${styles.headerContainer} ${isMenuOpen && styles.borderHidden}`}
-    >
-      <Flex
-        className={styles.header}
-        direction="row"
-        align="center"
-        justify="space-between"
-      >
-        <a href="https://www.ratepunk.com/">
+    <Flex className={`${styles.headerContainer}`} align="center">
+      <Flex className={`${styles.header}`} justify="space-between">
+        <Flex
+          className={styles.headerIcons}
+          direction="row"
+          align="center"
+          justify="space-between"
+        >
+          <a href="https://www.ratepunk.com/">
+            <Image
+              className={styles.logo}
+              src="/logo.svg"
+              alt="Logo"
+              height={32}
+              width={32}
+              priority
+            />
+          </a>
+
           <Image
-            className={styles.headerItem}
-            src="/logo.svg"
-            alt="Logo"
-            height={32}
-            width={32}
+            className={styles.menu}
+            src={isMenuOpen ? "/close.svg" : "/menu.svg"}
+            onClick={() => setIsMenuOpen((prevState) => !prevState)}
+            alt="Menu"
+            height={16}
+            width={16}
             priority
           />
-        </a>
+        </Flex>
 
-        <Image
-          className={styles.headerItem}
-          src={isMenuOpen ? "/close.svg" : "/menu.svg"}
-          onClick={() => setIsMenuOpen((prevState) => !prevState)}
-          alt="Menu"
-          height={16}
-          width={16}
-          priority
-        />
-      </Flex>
-
-      <Flex
-        className={`${styles.menuOptions} ${isMenuOpen ? "" : styles.hidden}`}
-      >
-        {menuOptions.map(({ name, link }) => (
-          <a
-            key={name}
-            href={link}
-            className={globalStyles.link}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Flex justify="center" className={styles.menuOption}>
-              {name}
-            </Flex>
-          </a>
-        ))}
+        <Flex
+          className={`${styles.menuOptions} ${isMenuOpen ? "" : styles.hidden}`}
+        >
+          {menuOptions.map(({ name, link }) => (
+            <a
+              key={name}
+              href={link}
+              className={globalStyles.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Flex justify="center" className={styles.menuOption}>
+                {name}
+              </Flex>
+            </a>
+          ))}
+        </Flex>
       </Flex>
     </Flex>
   );
