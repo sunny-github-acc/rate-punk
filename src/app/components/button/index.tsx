@@ -8,6 +8,7 @@ interface ButtonProps {
   bold?: true;
   children: ReactNode;
   className?: string;
+  onClick?: () => void;
   size?: "l";
   transparent?: true;
 }
@@ -16,6 +17,7 @@ export default function Button({
   bold,
   children,
   className,
+  onClick,
   size,
   transparent,
 }: ButtonProps) {
@@ -27,7 +29,7 @@ export default function Button({
   `;
 
   return (
-    <button className={updatedClassName}>
+    <button className={updatedClassName} onClick={onClick}>
       <Text className={styles.buttonText} bold={bold}>
         {children}
       </Text>

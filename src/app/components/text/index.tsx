@@ -8,8 +8,9 @@ interface TextProps {
   bold?: boolean;
   children: ReactNode;
   className?: string;
-  color?: "bright" | "light" | "white";
+  color?: "bright" | "light" | "white" | "red";
   italic?: boolean;
+  size?: "s";
 }
 
 const caveatBrush = Caveat_Brush({
@@ -25,6 +26,7 @@ export default function Text({
   className,
   color,
   italic,
+  size,
 }: TextProps) {
   const updatedClassName = `
     ${align && styles[`align-${align}`]}
@@ -32,6 +34,7 @@ export default function Text({
     ${color && styles[color]}
     ${italic && caveatBrush.className}
     ${italic && styles.italic}
+    ${size && styles[size]}
     ${className}
   `;
 

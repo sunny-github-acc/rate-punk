@@ -1,7 +1,13 @@
 .inputContainer
+  position: relative
   background: $seashell
   border: 1px solid $ocean
   border-radius: 8px
+  &.invalid
+    border: 1px solid $sunset
+  .invalidText
+    position: absolute
+    bottom: 100%
 
 .iconContainer
   padding-left: 16px
