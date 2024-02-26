@@ -32,10 +32,10 @@ export default function Steps() {
 
   return (
     <Card>
-      <Flex spacing="xxl">
+      <Flex spacing="xxxl">
         {steps.map((step) => (
           <Flex key={step.number} align="center" spacing="l">
-            <Flex align="center" spacing="xl">
+            <Flex align="center" spacing="xxl">
               <Image
                 className={styles.logo}
                 src={step.icon}

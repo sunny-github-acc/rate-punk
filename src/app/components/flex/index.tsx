@@ -6,22 +6,22 @@ interface FlexProps {
   align?: "center";
   children: ReactNode;
   className?: string;
-  directionRow?: true;
   justify?: "center" | "space-between";
-  spacing?: "m" | "l" | "xl" | "xxl";
+  row?: true;
+  spacing?: "s" | "m" | "l" | "xl" | "xxl" | "xxxl";
 }
 
 export default function Flex({
   align,
   children,
   className,
-  directionRow,
   justify,
+  row,
   spacing,
 }: FlexProps) {
   const updatedClassName = `
     ${styles.flex}
-    ${directionRow && styles.row}
+    ${row ? styles.row : styles.column}
     ${align && styles["align-" + align]}
     ${justify && styles["justify-" + justify]}
     ${spacing && styles["spacing-" + spacing]}

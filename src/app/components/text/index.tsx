@@ -8,7 +8,7 @@ interface TextProps {
   bold?: boolean;
   children: ReactNode;
   className?: string;
-  color?: "bright" | "light";
+  color?: "bright" | "light" | "white";
   italic?: boolean;
 }
 

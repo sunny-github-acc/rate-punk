@@ -9,11 +9,29 @@
     justify-content: center
   &.justify-space-between
     justify-content: space-between
-  &.spacing-m > *:not(:last-child)
+
+  &.column.spacing-s > *:not(:last-child)
+    margin-bottom: 4px
+  &.column.spacing-m > *:not(:last-child)
     margin-bottom: 8px
-  &.spacing-l > *:not(:last-child)
+  &.column.spacing-l > *:not(:last-child)
     margin-bottom: 16px
-  &.spacing-xl > *:not(:last-child)
+  &.column.spacing-xl > *:not(:last-child)
+    margin-bottom: 24px
+  &.column.spacing-xxl > *:not(:last-child)
     margin-bottom: 32px
-  &.spacing-xxl > *:not(:last-child)
+  &.column.spacing-xxxl > *:not(:last-child)
     margin-bottom: 48px
+
+  &.row.spacing-s > *:not(:last-child)
+    margin-right: 4px
+  &.row.spacing-m > *:not(:last-child)
+    margin-right: 8px
+  &.row.spacing-l > *:not(:last-child)
+    margin-right: 16px
+  &.row.spacing-xl > *:not(:last-child)
+    margin-right: 24px
+  &.row.spacing-xxl > *:not(:last-child)
+    margin-right: 32px
+  &.row.spacing-xxxl > *:not(:last-child)
+    margin-right: 48px

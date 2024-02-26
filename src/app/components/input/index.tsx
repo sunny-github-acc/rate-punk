@@ -12,7 +12,7 @@ export default function Input({ className, placeholder }: InputProps) {
   return (
     <Flex
       className={`${styles.inputContainer} ${className}`}
-      directionRow
+      row
       align="center"
     >
       <Flex className={styles.iconContainer}>

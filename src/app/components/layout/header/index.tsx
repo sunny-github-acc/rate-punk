@@ -19,11 +19,11 @@ export default function Header() {
   ];
 
   return (
-    <Flex className={`${styles.headerContainer}`} align="center">
-      <Flex className={`${styles.header}`} justify="space-between">
+    <Flex className={styles.headerContainer} align="center">
+      <Flex className={styles.header} justify="space-between">
         <Flex
           className={styles.headerIcons}
-          directionRow
+          row
           align="center"
           justify="space-between"
         >
