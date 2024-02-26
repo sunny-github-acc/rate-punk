@@ -4,10 +4,9 @@
   .headerContainer
     position: absolute
     top: 0
-    width: calc(100% - 34px)
+    width: calc(100% - 32px)
     padding: 0px 16px
-    border: 1px solid $black
-    background: $background
+    background: $seashell
     .header
       width: 100%
       max-width: 1120px
@@ -28,18 +27,14 @@
           display: none
     .menuOptions
       max-height: 500px
-      padding-bottom: 8px
+      margin: 8px 0 16px
       opacity: 1
       overflow: hidden
-      transition: max-height 1s
+      transition: max-height 1s, margin 0.3s
       &.hidden
         max-height: 0
-        padding-bottom: 0
-        transition: max-height 0.3s, padding 0.5s
-      .menuOption
-        height: 40px
-        &:hover
-          color: $skyBlue
+        margin: 0
+        transition: max-height 0.3s, margin 0.3s
     @media (min-width: 376px)
       .menuOptions
         flex-direction: row
@@ -49,3 +44,6 @@
           max-height: unset
         .menuOption
           margin-left: 52px
+  .content
+    padding: 32px 16px 48px
+    background: $creamsicle

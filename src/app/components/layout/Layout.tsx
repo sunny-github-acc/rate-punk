@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 
+import Content from "@/app/components/layout/Content";
 import Flex from "@/app/components/flex/Flex";
 import Header from "@/app/components/layout/Header";
 
@@ -13,7 +14,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <Flex className={styles.layout}>
       <Header />
-      {children}
+      <Content>{children}</Content>
       <Flex>footer</Flex>
     </Flex>
   );

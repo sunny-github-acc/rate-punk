@@ -7,6 +7,7 @@ import Flex from "@/app/components/flex/Flex";
 import styles from "./styles.module.sass";
 import globalStyles from "../../styles/styles.module.sass";
 import Image from "next/image";
+import Button from "@/app/components/button/Button";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,7 +23,7 @@ export default function Header() {
       <Flex className={`${styles.header}`} justify="space-between">
         <Flex
           className={styles.headerIcons}
-          direction="row"
+          directionRow
           align="center"
           justify="space-between"
         >
@@ -59,8 +60,8 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Flex justify="center" className={styles.menuOption}>
-                {name}
+              <Flex className={styles.menuOption}>
+                <Button transparent>{name}</Button>
               </Flex>
             </a>
           ))}

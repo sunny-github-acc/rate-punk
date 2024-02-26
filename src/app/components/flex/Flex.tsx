@@ -6,24 +6,24 @@ interface FlexProps {
   align?: "center";
   children: ReactNode;
   className?: string;
-  direction?: "row";
+  directionRow?: true;
   justify?: "center" | "space-between";
 }
 
 export default function Flex({
   align,
   children,
-  direction,
+  className,
+  directionRow,
   justify,
-  ...props
 }: FlexProps) {
-  const className = `
-    ${props.className}
+  const updatedClassName = `
     ${styles.flex}
-    ${direction && styles.row}
+    ${directionRow && styles.row}
     ${align && styles["align-" + align]}
     ${justify && styles["justify-" + justify]}
+    ${className}
   `;
 
-  return <div className={className}>{children}</div>;
+  return <div className={updatedClassName}>{children}</div>;
 }

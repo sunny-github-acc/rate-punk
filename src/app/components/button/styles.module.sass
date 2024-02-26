@@ -1,0 +1,18 @@
+.button
+  width: 100%
+  padding: 8px
+  background: $skyBlue
+  border: 1px solid $ocean
+  border-radius: 8px
+  cursor: pointer
+  &.large
+    padding: 16px
+  .buttonText
+    color: $seashell
+  &.transparent
+    background: transparent
+    border: 0
+  &.transparent .buttonText
+    color: unset
+  &.transparent .buttonText:hover
+    color: $skyBlue
