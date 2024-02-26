@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import Flex from "@/app/components/flex";
+import Link from "@/app/components/link";
 import Text from "@/app/components/text";
 
 import styles from "./styles.module.sass";
@@ -22,12 +23,11 @@ export default function Extensions() {
   return (
     <Flex className={styles.extensions} align="center" spacing="xl">
       {extensions.map((extension) => (
-        <a
+        <Link
           key={extension.title}
           href={extension.link}
           className={styles.extensionContainer}
-          target="_blank"
-          rel="noopener noreferrer"
+          newTab
         >
           <Flex align="center" row className={styles.extension}>
             <Image
@@ -46,7 +46,7 @@ export default function Extensions() {
               </Text>
             </Flex>
           </Flex>
-        </a>
+        </Link>
       ))}
 
       <Flex spacing="m" align="center" row>

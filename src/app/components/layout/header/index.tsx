@@ -1,13 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 import Button from "@/app/components/button";
 import Flex from "@/app/components/flex";
-import Image from "next/image";
+import Link from "@/app/components/link";
 
 import styles from "./styles.module.sass";
-import globalStyles from "../../../styles/styles.module.sass";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,7 +27,7 @@ export default function Header() {
           align="center"
           justify="space-between"
         >
-          <a href="https://www.ratepunk.com/">
+          <Link href="https://www.ratepunk.com/">
             <Image
               className={styles.logo}
               src="/logo.svg"
@@ -36,7 +36,7 @@ export default function Header() {
               width={32}
               priority
             />
-          </a>
+          </Link>
 
           <Image
             className={styles.menu}
@@ -53,17 +53,11 @@ export default function Header() {
           className={`${styles.menuOptions} ${isMenuOpen ? "" : styles.hidden}`}
         >
           {menuOptions.map(({ name, link }) => (
-            <a
-              key={name}
-              href={link}
-              className={globalStyles.link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link key={name} href={link} newTab>
               <Flex className={styles.menuOption}>
                 <Button transparent>{name}</Button>
               </Flex>
-            </a>
+            </Link>
           ))}
         </Flex>
       </Flex>
