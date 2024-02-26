@@ -7,7 +7,7 @@ import styles from "./styles.module.sass";
 
 export default function Referrals() {
   return (
-    <Card>
+    <Card light>
       <Text className={styles.title} italic>
         REFER FRIENDS AND GET REWARDS
       </Text>
@@ -20,11 +20,11 @@ export default function Referrals() {
 
       <Input className={styles.input} placeholder="Enter your email address" />
 
-      <Button className={styles.button} size="large" bold>
+      <Button className={styles.button} size="l" bold>
         Get Referral Link
       </Button>
 
-      <Text light>Limits on max rewards apply.</Text>
+      <Text color="light">Limits on max rewards apply.</Text>
     </Card>
   );
 }

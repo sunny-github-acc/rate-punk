@@ -8,6 +8,7 @@ interface FlexProps {
   className?: string;
   directionRow?: true;
   justify?: "center" | "space-between";
+  spacing?: "m" | "l" | "xl" | "xxl";
 }
 
 export default function Flex({
@@ -16,12 +17,14 @@ export default function Flex({
   className,
   directionRow,
   justify,
+  spacing,
 }: FlexProps) {
   const updatedClassName = `
     ${styles.flex}
     ${directionRow && styles.row}
     ${align && styles["align-" + align]}
     ${justify && styles["justify-" + justify]}
+    ${spacing && styles["spacing-" + spacing]}
     ${className}
   `;
 

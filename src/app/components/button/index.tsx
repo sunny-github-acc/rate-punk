@@ -8,7 +8,7 @@ interface ButtonProps {
   bold?: true;
   children: ReactNode;
   className?: string;
-  size?: "large";
+  size?: "l";
   transparent?: true;
 }
 

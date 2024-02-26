@@ -1,30 +1,56 @@
-import Button from "@/app/components/button";
+import Image from "next/image";
+
 import Card from "@/app/components/card";
-import Input from "@/app/components/input";
-import Text from "@/app/components/text";
+import Flex from "@/app/components/flex";
 
 import styles from "./styles.module.sass";
+import Text from "@/app/components/text";
 
-export default function Referrals() {
+export default function Steps() {
+  const steps = [
+    {
+      icon: "invite.svg",
+      number: "STEP 1",
+      title: "INVITE FRIENDS",
+      subtitle: "Refer friends with your unique referral link.",
+    },
+    {
+      icon: "collect-coins.svg",
+      number: "STEP 2",
+      title: "COLLECT COINS",
+      subtitle:
+        "Get 1 coin for each friend that installs our extension using your referral link.",
+    },
+    {
+      icon: "voucher.svg",
+      number: "STEP 3",
+      title: "GET VOUCHER",
+      subtitle:
+        "Redeem for a $20 hotel booking voucher once you collect 20 coins.",
+    },
+  ];
+
   return (
     <Card>
-      <Text className={styles.title} italic>
-        REFER FRIENDS AND GET REWARDS
-      </Text>
-
-      <Text className={styles.subtitle}>
-        Refer your friends to us and earn hotel booking vouchers. We&apos;ll
-        give you 1 coin for each friend that installs our extension. Minimum
-        cash-out at 20 coins.
-      </Text>
-
-      <Input className={styles.input} placeholder="Enter your email address" />
-
-      <Button className={styles.button} size="large" bold>
-        Get Referral Link
-      </Button>
-
-      <Text light>Limits on max rewards apply.</Text>
+      <Flex spacing="xxl">
+        {steps.map((step) => (
+          <Flex key={step.number} align="center" spacing="l">
+            <Flex align="center" spacing="xl">
+              <Image
+                className={styles.logo}
+                src={step.icon}
+                alt={`${step.number} icon`}
+                height={128}
+                width={128}
+                priority
+              />
+              <Text color="bright">{step.number}</Text>
+            </Flex>
+            <Text italic>{step.title}</Text>
+            <Text align="center">{step.subtitle}</Text>
+          </Flex>
+        ))}
+      </Flex>
     </Card>
   );
 }
