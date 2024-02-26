@@ -1,4 +1,4 @@
-import Flex from "@/app/components/flex/Flex";
+import Flex from "@/app/components/flex";
 import Image from "next/image";
 
 import styles from "./styles.module.sass";

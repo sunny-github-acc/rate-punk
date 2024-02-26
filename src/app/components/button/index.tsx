@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-import Text from "@/app/components/text/Text";
+import Text from "@/app/components/text";
 
 import styles from "./styles.module.sass";
 

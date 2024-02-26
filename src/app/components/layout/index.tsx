@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
 
-import Content from "@/app/components/layout/Content";
-import Flex from "@/app/components/flex/Flex";
-import Header from "@/app/components/layout/Header";
+import Content from "@/app/components/layout/content/Content";
+import Flex from "@/app/components/flex";
+import Header from "@/app/components/layout/header/Header";
 
 import styles from "./styles.module.sass";
 

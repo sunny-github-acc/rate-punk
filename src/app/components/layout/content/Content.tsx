@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-import Flex from "@/app/components/flex/Flex";
+import Flex from "@/app/components/flex";
 
 import styles from "./styles.module.sass";
 

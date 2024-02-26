@@ -1,7 +1,7 @@
-import Button from "@/app/components/button/Button";
-import Card from "@/app/components/card/Card";
-import Input from "@/app/components/input/Input";
-import Text from "@/app/components/text/Text";
+import Button from "@/app/components/button";
+import Card from "@/app/components/card";
+import Input from "@/app/components/input";
+import Text from "@/app/components/text";
 
 import styles from "./styles.module.sass";
 

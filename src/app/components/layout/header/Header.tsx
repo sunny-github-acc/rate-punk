@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 
-import Flex from "@/app/components/flex/Flex";
+import Button from "@/app/components/button";
+import Flex from "@/app/components/flex";
+import Image from "next/image";
 
 import styles from "./styles.module.sass";
-import globalStyles from "../../styles/styles.module.sass";
-import Image from "next/image";
-import Button from "@/app/components/button/Button";
+import globalStyles from "../../../styles/styles.module.sass";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
