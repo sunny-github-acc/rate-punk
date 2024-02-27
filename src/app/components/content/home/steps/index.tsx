@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-import Card from "@/app/components/card";
 import Flex from "@/app/components/flex";
 
 import styles from "./styles.module.sass";
@@ -31,11 +30,20 @@ export default function Steps() {
   ];
 
   return (
-    <Card>
+    <Flex
+      paddingHorizontal="l"
+      paddingVertical="xxl"
+      className={styles.stepContainer}
+    >
       <Flex spacing="xxxl">
-        {steps.map((step) => (
-          <Flex key={step.number} align="center" spacing="l">
-            <Flex align="center" spacing="xxl">
+        {steps.map((step, index) => (
+          <Flex
+            key={step.number}
+            className={`${styles.step} ${index % 2 !== 0 && styles.reverted}`}
+            align="center"
+            spacing="l"
+          >
+            <Flex align="center" spacing="xxl" style={{ marginBottom: "32px" }}>
               <Image
                 className={styles.logo}
                 src={step.icon}
@@ -44,13 +52,18 @@ export default function Steps() {
                 width={128}
                 priority
               />
-              <Text color="bright">{step.number}</Text>
             </Flex>
-            <Text italic>{step.title}</Text>
-            <Text align="center">{step.subtitle}</Text>
+
+            <Flex align="center" spacing="l" className={styles.texts}>
+              <Text color="bright" bold>
+                {step.number}
+              </Text>
+              <Text italic>{step.title}</Text>
+              <Text align="center">{step.subtitle}</Text>
+            </Flex>
           </Flex>
         ))}
       </Flex>
-    </Card>
+    </Flex>
   );
 }

@@ -1,2 +1,14 @@
 .logo
   max-width: 128px
+
+@media (min-width: 480px)
+  .stepContainer
+    flex: 2
+    .step
+      flex-direction: row
+      gap: 48px
+      &.reverted
+        flex-direction: row-reverse
+      .texts > *
+        width: 100%
+        text-align: left

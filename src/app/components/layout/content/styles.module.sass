@@ -1,3 +1,10 @@
-.content
-  padding: 32px 16px 16px
+.contentContainer
   background: $creamsicle
+  .content
+    max-width: 1120px
+    padding: 32px 16px 16px
+
+@media (min-width: 480px)
+  .contentContainer
+    .content
+      padding: 64px

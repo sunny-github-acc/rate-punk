@@ -24,17 +24,22 @@ export default function Footer() {
     "Privacy Policy",
   ];
 
+  const terms = (
+    <Text color="light">© 2021 Ratepunk. All Rights Reserved.</Text>
+  );
+
   return (
     <Flex>
       <Extensions />
 
-      <Flex
-        className={styles.footer}
-        paddingHorizontal="xxl"
-        paddingVertical="xxxl"
-      >
-        <Flex spacing="xxxl">
-          <Flex spacing="xxl">
+      <Flex className={styles.footerContainer} align="center">
+        <Flex
+          className={styles.footer}
+          paddingHorizontal="xxl"
+          paddingVertical="xxxl"
+          spacing="xxxl"
+        >
+          <Flex spacing="xxl" className={styles.logoContainer}>
             <Link href="https://www.ratepunk.com/">
               <Image
                 className={styles.logo}
@@ -51,9 +56,11 @@ export default function Footer() {
               top booking sites and runs a price comparison, so you can be
               confident in knowing you&apos;re getting the best deal!
             </Text>
+
+            <Flex className={styles.termsDesktop}>{terms}</Flex>
           </Flex>
 
-          <Flex spacing="xxl">
+          <Flex className={styles.links} spacing="xxl">
             <Flex spacing="xl">
               <Text bold>QUICK LINKS</Text>
               <Flex spacing="l">
@@ -64,7 +71,9 @@ export default function Footer() {
                 ))}
               </Flex>
             </Flex>
+          </Flex>
 
+          <Flex className={styles.contacts} spacing="xxxl">
             <Flex spacing="xl">
               <Text bold>CONTACT</Text>
               <Flex spacing="l" align="center" row>
@@ -106,9 +115,7 @@ export default function Footer() {
             </Flex>
           </Flex>
 
-          <Flex>
-            <Text color="light">© 2021 Ratepunk. All Rights Reserved.</Text>
-          </Flex>
+          <Flex className={styles.terms}>{terms}</Flex>
         </Flex>
       </Flex>
     </Flex>

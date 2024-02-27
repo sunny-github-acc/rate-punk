@@ -1,9 +1,17 @@
-.title,
-.subtitle
-  margin-bottom: 24px
-.input
-  margin-bottom: 16px
-.button
-  margin-bottom: 72px
-.logo
-  width: 24px
+.container
+  background: $cloudWhite
+  border: 1px solid $ocean
+  border-radius: 16px
+  .title,
+  .subtitle
+    margin-bottom: 24px
+  .input
+    margin-bottom: 16px
+  .button
+    margin-bottom: 72px
+  .logo
+    width: 24px
+
+@media (min-width: 480px)
+  .container
+    flex: 1

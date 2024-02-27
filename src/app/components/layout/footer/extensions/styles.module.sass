@@ -1,16 +1,28 @@
-.extensions
-  padding: 32px
+.extensionsContainer
   background: $whalesBack
-  .extensionContainer
-    width: 100%
-    border: 1px solid $ocean
-    border-radius: 16px
-    text-decoration: none
-    .extension
-      padding: 14px 24px
-      .extensionLogo
-        width: 64px
-      .title
-        font-size: 20px
-      .starLogo
-        width: 16px
+  .extensions
+    max-width: 1120px
+    padding: 32px
+    .extensionContainer
+      width: 100%
+      border: 1px solid $ocean
+      border-radius: 16px
+      text-decoration: none
+      .extension
+        padding: 14px 24px
+        .extensionLogo
+          width: 64px
+        .title
+          font-size: 20px
+        .starLogo
+          width: 16px
+@media (min-width: 480px)
+  .extensionsContainer
+    .extensions
+      flex-direction: row
+      gap: 16px
+      width: calc(100% - 64px)
+      &.extensions > *
+        flex: 1
+    .chromeContainer
+      margin-left: 16px

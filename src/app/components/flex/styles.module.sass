@@ -73,3 +73,15 @@
   &.padding-vertical-xxxl
     padding-top: 48px
     padding-bottom: 48px
+
+@media (min-width: 480px)
+  .flex
+    &.desktop-margin-s
+      margin: 64px
+
+    &.desktop-padding-s
+      padding: 64px
+
+    &.column.flips > *:not(:last-child)
+      padding: unset
+      margin: unset

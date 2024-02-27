@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useState } from "react";
 
 import Button from "@/app/components/button";
-import Card from "@/app/components/card";
 import Flex from "@/app/components/flex";
 import Input from "@/app/components/input";
 import Text from "@/app/components/text";
@@ -14,7 +13,7 @@ import styles from "./styles.module.sass";
 export default function Referrals() {
   const [email, setEmail] = useState("");
   const [isValidEmail, setIsValidEmail] = useState(true);
-  const [isSubmitted, setIsSubmitted] = useState(true);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleEmail = (email: string) => {
     setEmail(email);
@@ -32,7 +31,12 @@ export default function Referrals() {
   };
 
   return (
-    <Card light>
+    <Flex
+      className={styles.container}
+      paddingHorizontal="l"
+      paddingVertical="xxl"
+      desktopPadding="s"
+    >
       <Text className={styles.title} italic>
         REFER FRIENDS AND GET REWARDS
       </Text>
@@ -67,11 +71,17 @@ export default function Referrals() {
         />
       </Flex>
 
-      <Button className={styles.button} size="l" bold onClick={handleSubmit}>
+      <Button
+        className={styles.button}
+        size="l"
+        bold
+        onClick={handleSubmit}
+        textCenter
+      >
         Get Referral Link
       </Button>
 
       <Text color="light">Limits on max rewards apply.</Text>
-    </Card>
+    </Flex>
   );
 }

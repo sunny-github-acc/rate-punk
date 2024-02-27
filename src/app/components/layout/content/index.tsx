@@ -9,5 +9,9 @@ interface ContentProps {
 }
 
 export default function Content({ children }: ContentProps) {
-  return <Flex className={styles.content}>{children}</Flex>;
+  return (
+    <Flex className={styles.contentContainer} align="center">
+      <Flex className={styles.content}>{children}</Flex>
+    </Flex>
+  );
 }
