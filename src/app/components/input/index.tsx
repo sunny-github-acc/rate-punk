@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ChangeEvent } from "react";
 
+import Button from "@/app/components/button";
 import Flex from "@/app/components/flex";
 import Text from "@/app/components/text";
 
@@ -8,16 +9,20 @@ import styles from "./styles.module.sass";
 
 interface InputProps {
   className?: string;
+  copy?: boolean;
   invalid?: true | false;
   invalidText?: string;
-  onChange: (value: string) => void;
+  loading?: boolean;
+  onChange: (value?: string) => void;
   placeholder?: string;
 }
 
 export default function Input({
   className,
+  copy,
   invalid,
   invalidText,
+  loading,
   onChange,
   placeholder,
 }: InputProps) {
@@ -25,6 +30,12 @@ export default function Input({
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     onChange(e.target.value);
+  };
+
+  const handleCopy = () => {
+    if (!loading) {
+      onChange();
+    }
   };
 
   return (
@@ -36,8 +47,8 @@ export default function Input({
       )}
       <Flex className={styles.iconContainer}>
         <Image
-          className={styles.logo}
-          src="/email.svg"
+          className={`${styles.logo} ${loading && styles.loading}`}
+          src={loading ? "/loading.svg" : "/email.svg"}
           alt="Logo"
           height={16}
           width={16}
@@ -50,6 +61,14 @@ export default function Input({
         className={styles.input}
         onChange={handleChange}
       />
+
+      {copy && (
+        <Flex>
+          <Button className={styles.button} bold onClick={handleCopy}>
+            Copy
+          </Button>
+        </Flex>
+      )}
     </Flex>
   );
 }

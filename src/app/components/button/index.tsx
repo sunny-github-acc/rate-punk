@@ -10,6 +10,7 @@ interface ButtonProps {
   className?: string;
   onClick?: () => void;
   size?: "l";
+  style?: object;
   textCenter?: true;
   transparent?: true;
 }
@@ -20,6 +21,7 @@ export default function Button({
   className,
   onClick,
   size,
+  style,
   textCenter,
   transparent,
 }: ButtonProps) {
@@ -31,7 +33,7 @@ export default function Button({
   `;
 
   return (
-    <button className={updatedClassName} onClick={onClick}>
+    <button className={updatedClassName} style={style} onClick={onClick}>
       <Text
         className={styles.buttonText}
         align={textCenter && "center"}

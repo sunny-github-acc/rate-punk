@@ -1,0 +1,11 @@
+<svg class="loading-bubbles" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+  <circle cx="30" cy="50" r="15" fill="white">
+    <animate attributeName="cx" values="30;70;30" dur="1.5s" keyTimes="0;0.5;1" repeatCount="indefinite" />
+  </circle>
+  <circle cx="50" cy="50" r="15" fill="#4EB3E3">
+    <animate attributeName="cx" values="30;70;30" dur="1.5s" keyTimes="0;0.5;1" begin="-0.75s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="70" cy="50" r="15" fill="#F8CC5D">
+    <animate attributeName="cx" values="30;70;30" dur="1.5s" keyTimes="0;0.5;1" begin="-1.5s" repeatCount="indefinite" />
+  </circle>
+</svg>
