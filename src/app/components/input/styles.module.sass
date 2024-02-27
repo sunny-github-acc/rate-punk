@@ -8,9 +8,24 @@
   .invalidText
     position: absolute
     bottom: 100%
+  .button
+    border: none
+    border-left: 1px solid $ocean
+    border-radius: 7px
+    border-top-left-radius: 0
+    border-bottom-left-radius: 0
 
 .iconContainer
   padding-left: 16px
+  .loading
+    animation: rotate 1s linear infinite
+
+@keyframes rotate
+  from
+    transform: rotate(0deg)
+
+  to
+    transform: rotate(360deg)
 
 .input
   flex: 1
