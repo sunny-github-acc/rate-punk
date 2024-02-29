@@ -2,17 +2,16 @@
 
 import { fileURLToPath } from 'url';
 import { join, dirname } from 'path';
-import fs from 'fs'; // Import fs module
+import fs from 'fs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const globalsFilePath = join(__dirname, 'src', 'app', 'styles', 'variables.sass');
+const globalsFilePath = './src/app/styles/variables.sass';
 
 let prependData = '';
 
 try {
-  // Read the content of globals.sass
   const globalsContent = fs.readFileSync(globalsFilePath, 'utf-8');
   prependData = `@import "${globalsFilePath}"\n${globalsContent}`;
 } catch (error) {
